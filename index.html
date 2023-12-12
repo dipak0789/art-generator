@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Generative AI Art Generator</title>
+  <style>
+    /* CSS styles */
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    button {
+      padding: 8px 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    canvas {
+      border: 1px solid #ccc;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Generative AI Art Generator</h1>
+
+  <button onclick="generateArt()">Generate Art</button>
+
+  <canvas id="artCanvas" width="400" height="400"></canvas>
+
+  <script>
+    // JavaScript code
+    function generateArt() {
+      const canvas = document.getElementById('artCanvas');
+      const ctx = canvas.getContext('2d');
+
+      // Generate random color for art
+      const randomColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+
+      // Draw a rectangle with the generated color on the canvas
+      ctx.fillStyle = randomColor;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
+  </script>
+</body>
+</html>
